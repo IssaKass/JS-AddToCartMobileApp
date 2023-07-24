@@ -1,7 +1,12 @@
 # JS-AddToCartMobileApp
 Add To Card Mobile App using JS and Firebase
+<a href="https://issakass.github.io/JS-AddToCartMobileApp/">↪ Live Demo </a><br/><br/>
+<img src="preview.png" alt="Preview Image" />
 
-<a href="https://issakass.github.io/JS-AddToCartMobileApp/">↪ Live Demo </a>
+## About the App
+- This app is from Scrimba JS Tutorial (thanks for them).
+- It is built in HTML, CSS and JavaScript.
+- It uses Firebase as a database.
 
 ## Download the App
 ### On Android
