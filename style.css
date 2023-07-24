@@ -1,0 +1,88 @@
+:root {
+  --transition: 150ms ease;
+  --clr-white: #fffdf8;
+  --clr-black: #432000;
+  --clr-bg: #eef0f4;
+  --clr-blue: #dce1eb;
+  --clr-dark-red: #ac485a;
+  --clr-beige: #ffecc7;
+
+  --fs: 20px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  background-color: var(--clr-bg);
+  color: var(--clr-black);
+  user-select: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  margin: 30px auto;
+}
+
+img {
+  width: 150px;
+  margin: 0 auto;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: var(--fs);
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  transition: var(--transition);
+}
+
+input {
+  color: var(--clr-black);
+  background-color: var(--clr-blue);
+  margin: 10px 0;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px var(--clr-dark-red);
+}
+
+button {
+  color: var(--clr-white);
+  background-color: var(--clr-dark-red);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--clr-black);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+ul li {
+  background-color: var(--clr-white);
+  padding: 15px;
+  font-size: var(--fs);
+  border-radius: 5px;
+  flex-grow: 1;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+ul li:hover {
+  background-color: var(--clr-beige);
+}
