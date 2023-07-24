@@ -9,7 +9,7 @@ Add To Card Mobile App using JS and Firebase
 - On the top right corner, click the menu button <b>⁝</b>
 - From the menu list, click on <b>Add To Home</b>
 - Set the display name or leave it.
-- Press <b>Add</a>
+- Press the <b>Add</b> button.
 - You should find the app in your mobile.
 
 ### On ios
@@ -17,5 +17,5 @@ Add To Card Mobile App using JS and Firebase
 - On the bottom panel, click the button in the center<b></b>
 - From the menu list, click <b>Add To Home Screen</b>
 - Set the display name or leave it.
-- Press <b>add</a>
+- Press the <b>add</b> button.
 - You should find the app in your mobile.
