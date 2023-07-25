@@ -69,6 +69,10 @@ function appendItemToshoppingListEl(item) {
 }
 
 // UI Button
+const uiButtonEl = document.getElementById("ui-button");
+const imageEl = document.getElementById("image-el");
+const root = document.querySelector(":root");
+
 const UI_THEMES = [
   {
     colors: [
@@ -113,23 +117,23 @@ const UI_THEMES = [
       { property: "--bg-item-hover", value: "#f7f7f7" },
       { property: "--clr-item", value: "#555555" },
     ],
-    image: "assets/cat2.png",
+    image: "assets/cat3.png",
   },
 ];
 
 let currentTheme = 0;
+let themeFromLocalStorage = JSON.parse(localStorage.getItem("theme"));
 
-const uiButtonEl = document.getElementById("ui-button");
-const imageEl = document.getElementById("image-el");
-const root = document.querySelector(":root");
+if (themeFromLocalStorage) {
+  currentTheme = themeFromLocalStorage;
+  render(currentTheme);
+}
 
-uiButtonEl.addEventListener("click", function () {
-  currentTheme = currentTheme + 1 === UI_THEMES.length ? 0 : currentTheme + 1;
+function render(themeIndex) {
+  let theme = UI_THEMES[themeIndex];
 
-  let uiTheme = UI_THEMES[currentTheme];
-
-  let colors = uiTheme.colors;
-  let imageSrc = uiTheme.image;
+  let colors = theme.colors;
+  let imageSrc = theme.image;
 
   colors.forEach((color) => {
     let { property, value } = color;
@@ -137,4 +141,10 @@ uiButtonEl.addEventListener("click", function () {
   });
 
   imageEl.src = imageSrc;
+}
+
+uiButtonEl.addEventListener("click", function () {
+  currentTheme = currentTheme + 1 === UI_THEMES.length ? 0 : currentTheme + 1;
+  localStorage.setItem("theme", currentTheme);
+  render(currentTheme);
 });
