@@ -1,13 +1,20 @@
 :root {
-  --transition: 150ms ease;
-  --clr-white: #fffdf8;
-  --clr-black: #432000;
-  --clr-bg: #eef0f4;
-  --clr-blue: #dce1eb;
-  --clr-dark-red: #ac485a;
-  --clr-beige: #ffecc7;
+  --bg-body: #f5ebeb;
+  --bg-input: #e4d0d0;
+  --clr-input: #ffffff;
+  --clr-input-placeholder: #ffffffaa;
+  --bg-button: #d5b4b4;
+  --bg-button-hover: #867070;
+  --clr-button: #ffffff;
+  --bg-item: #ffffff;
+  --bg-item-hover: #f8f1f1;
+  --clr-item: #555555;
 
   --fs: 20px;
+
+  --rad: 8px;
+
+  --transition: 150ms ease;
 }
 
 html,
@@ -15,12 +22,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Rubik", sans-serif;
-  background-color: var(--clr-bg);
-  color: var(--clr-black);
+  background-color: var(--bg-body);
   user-select: none;
 }
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 320px;
@@ -30,14 +37,13 @@ body {
 img {
   width: 150px;
   margin: 0 auto;
+  -webkit-user-drag: none;
 }
 
 input,
 button {
   border: none;
   outline: none;
-  padding: 15px;
-  border-radius: 8px;
   font-size: var(--fs);
   text-align: center;
   font-family: "Rubik", sans-serif;
@@ -45,23 +51,30 @@ button {
 }
 
 input {
-  color: var(--clr-black);
-  background-color: var(--clr-blue);
+  padding: 15px;
+  color: var(--clr-input);
+  border-radius: var(--rad);
+  background-color: var(--bg-input);
   margin: 10px 0;
 }
 
-input:focus {
-  box-shadow: 0 0 0 2px var(--clr-dark-red);
+input::placeholder {
+  color: var(--clr-input-placeholder);
 }
 
 button {
-  color: var(--clr-white);
-  background-color: var(--clr-dark-red);
+  color: var(--clr-button);
+  background-color: var(--bg-button);
   cursor: pointer;
 }
 
 button:hover {
-  background-color: var(--clr-black);
+  background-color: var(--bg-button-hover);
+}
+
+#add-button {
+  padding: 15px;
+  border-radius: var(--rad);
 }
 
 ul {
@@ -73,16 +86,33 @@ ul {
 }
 
 ul li {
-  background-color: var(--clr-white);
+  color: var(--clr-item);
+  background-color: var(--bg-item);
   padding: 15px;
   font-size: var(--fs);
-  border-radius: 5px;
+  border-radius: var(--rad);
   flex-grow: 1;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: var(--transition);
 }
 
 ul li:hover {
-  background-color: var(--clr-beige);
+  background-color: var(--bg-item-hover);
+}
+
+#ui-button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  right: 5px;
+  top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ui-button svg {
+  fill: var(--clr-button);
 }

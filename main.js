@@ -67,3 +67,74 @@ function appendItemToshoppingListEl(item) {
 
   shoppingListEl.appendChild(newEl);
 }
+
+// UI Button
+const UI_THEMES = [
+  {
+    colors: [
+      { property: "--bg-body", value: "#f5ebeb" },
+      { property: "--bg-input", value: "#e4d0d0" },
+      { property: "--clr-input", value: "#ffffff" },
+      { property: "--clr-input-placeholder", value: "#ffffffaa" },
+      { property: "--bg-button", value: "#d5b4b4" },
+      { property: "--bg-button-hover", value: "#867070" },
+      { property: "--clr-button", value: "#ffffff" },
+      { property: "--bg-item", value: "#ffffff" },
+      { property: "--bg-item-hover", value: "#f8f1f1" },
+      { property: "--clr-item", value: "#555555" },
+    ],
+    image: "assets/cat1.png",
+  },
+  {
+    colors: [
+      { property: "--bg-body", value: "#F7FFE5" },
+      { property: "--bg-input", value: "#E1ECC8" },
+      { property: "--clr-input", value: "#ffffff" },
+      { property: "--clr-input-placeholder", value: "#ffffffcc" },
+      { property: "--bg-button", value: "#C4D7B2" },
+      { property: "--bg-button-hover", value: "#A0C49D" },
+      { property: "--clr-button", value: "#ffffff" },
+      { property: "--bg-item", value: "#ffffff" },
+      { property: "--bg-item-hover", value: "#f6ffe0" },
+      { property: "--clr-item", value: "#555555" },
+    ],
+    image: "assets/cat2.png",
+  },
+  {
+    colors: [
+      { property: "--bg-body", value: "#ECECEC" },
+      { property: "--bg-input", value: "#9FD3C7" },
+      { property: "--clr-input", value: "#ffffff" },
+      { property: "--clr-input-placeholder", value: "#ffffffbb" },
+      { property: "--bg-button", value: "#385170" },
+      { property: "--bg-button-hover", value: "#142D4C" },
+      { property: "--clr-button", value: "#ffffff" },
+      { property: "--bg-item", value: "#ffffff" },
+      { property: "--bg-item-hover", value: "#f7f7f7" },
+      { property: "--clr-item", value: "#555555" },
+    ],
+    image: "assets/cat2.png",
+  },
+];
+
+let currentTheme = 0;
+
+const uiButtonEl = document.getElementById("ui-button");
+const imageEl = document.getElementById("image-el");
+const root = document.querySelector(":root");
+
+uiButtonEl.addEventListener("click", function () {
+  currentTheme = currentTheme + 1 === UI_THEMES.length ? 0 : currentTheme + 1;
+
+  let uiTheme = UI_THEMES[currentTheme];
+
+  let colors = uiTheme.colors;
+  let imageSrc = uiTheme.image;
+
+  colors.forEach((color) => {
+    let { property, value } = color;
+    root.style.setProperty(property, value);
+  });
+
+  imageEl.src = imageSrc;
+});
